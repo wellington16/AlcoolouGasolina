@@ -24,16 +24,16 @@ class MainActivity : AppCompatActivity() {
         if(validaCampos) {
            calcularMelhorPreco(precoAlcool, precoGasolina)
         }else{
-            textView_resultado.setText("Preencha os preços com valores válidos!")
+            textView_resultado.text = getString(R.string.put_values)
         }
     }
 
-    fun validarCampos(precoAlcool: String, precoGasolina: String) : Boolean
+    private fun validarCampos(precoAlcool: String, precoGasolina: String) : Boolean
     {
         var camposValidos: Boolean = true
-        if (precoAlcool.isNullOrEmpty()){
+        if (precoAlcool.isEmpty()){
             camposValidos = false
-        }else if(precoGasolina.isNullOrEmpty()){
+        }else if(precoGasolina.isEmpty()){
             camposValidos = false
         }else if(precoAlcool.toDouble() < 1 || precoGasolina.toDouble() < 1){
             camposValidos = false
@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity() {
         return camposValidos
     }
 
-    fun calcularMelhorPreco(precoAlcool: String, precoGasolina: String){
+    private fun calcularMelhorPreco(precoAlcool: String, precoGasolina: String){
 
         //converter os valores strings para double
         val valorAlcool = precoAlcool.toDouble()
@@ -51,9 +51,9 @@ class MainActivity : AppCompatActivity() {
         val resultadoPreco =  valorAlcool / valorGasolina
 
         if (resultadoPreco >= 0.7){
-            textView_resultado.setText("Melhor utilizar gasolina!")
+            textView_resultado.text = getString(R.string.gasoline)
         }else {
-            textView_resultado.setText("Melhor utilizar álcool!")
+            textView_resultado.text = getString(R.string.alchool)
         }
     }
 }
