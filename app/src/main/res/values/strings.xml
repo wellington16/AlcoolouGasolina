@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Álcool ou Gasolina</string>
+    <string name="put_values">Preencha os preços com valores válidos!</string>
+    <string name="gasoline">Melhor utilizar gasolina!</string>
+    <string name="alchool">Melhor utilizar álcool!</string>
 </resources>
